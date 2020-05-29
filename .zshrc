@@ -84,12 +84,10 @@ source $ZSH/oh-my-zsh.sh
 alias run='$HOME/skillz/skillzpluggableengine/game/run.sh'
 alias testall='run tests --dc'
 alias CleanFolders='run clean && git clean -df'
-alias FakeJenkins='run clean && $HOME/bashScripts/FakeJenkins.sh $HOME/skillz/skillzpluggableengine/game/presets/2020/'
 alias glgm='git pull origin master'
 alias gpu='gp -u origin $(git_current_branch)'
-# Alias to exit interactive shell from vim.
-alias ExitVim='fg %1'
-
+alias mkdir='mkdir -p'
+alias gst="gst -sb"
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
