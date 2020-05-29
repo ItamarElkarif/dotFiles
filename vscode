@@ -1,0 +1,247 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "editor.suggestSelection": "first",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Fira Code', 'monospace', 'Droid Sans Mono', 'Droid Sans Fallback'",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "files.autoSave": "afterDelay",
+    "editor.rulers": [
+        120
+    ],
+    "workbench.colorCustomizations": {
+        "[Cobalt2]": {
+            "merge.border": "#ca6f3a",
+            "merge.commonContentBackground": "#ff0000",
+            "merge.commonHeaderBackground": "#a3ad42",
+            "merge.currentContentBackground": "#1ab6688e",
+            "merge.currentHeaderBackground": "#1ebe66bd",
+            "merge.incomingContentBackground": "#289fbd9c",
+            "merge.incomingHeaderBackground": "#03fdf07e"
+        },
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword",
+                "settings": {
+                    "foreground": "#cf8b25"
+                }
+            }
+        ]
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "cSpell.enableFileTypes": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "git-commit",
+        "go",
+        "handlebars",
+        "haxe",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pug",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml"
+    ],
+    "css.lint.argumentsInColorFunction": "warning",
+    "editor.formatOnPaste": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "python",
+        "haxe",
+        "csharp",
+        "cpp"
+    ],
+    "vim.overrideCopy": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.ignorecase": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.handleKeys": {
+        "<C-k>": false,
+        "<C-f>": false
+    },
+    // "vim.normalModeKeyBindingsNonRecursive": [
+    //     {
+    //         "before": [
+    //             "<space>",
+    //             "s"
+    //         ],
+    //         "after": [
+    //             "<leader>",
+    //             "<leader>",
+    //             "s"
+    //         ]
+    //     },
+    //     {
+    //         "before": [
+    //             "\\"
+    //         ],
+    //         "after": [
+    //             "<leader>",
+    //             "<leader>"
+    //         ]
+    //     },
+    //     {
+    //         "before": [
+    //             "<C-n>"
+    //         ],
+    //         "commands": [
+    //             ":nohl"
+    //         ]
+    //     },
+    //     {
+    //         "before": [
+    //             "<leader>c"
+    //         ],
+    //         "after": [
+    //             "g",
+    //             "c"
+    //         ]
+    //     }
+    // ],
+    // "vim.normalModeKeyBindings": [
+    //     {
+    //         "before": [
+    //             "<leader>",
+    //             "r"
+    //         ],
+    //         "after": [
+    //             "g",
+    //             "r"
+    //         ]
+    //     }
+    // ],
+    // "vim.visualModeKeyBindingsNonRecursive": [
+    //     {
+    //         "before": [
+    //             "p"
+    //         ],
+    //         "after": [
+    //             "p",
+    //             "g",
+    //             "v",
+    //             "y"
+    //         ]
+    //     }
+    // ],
+    // "vim.insertModeKeyBindings": [
+    //     {
+    //         "before": [
+    //             "j",
+    //             "j"
+    //         ],
+    //         "after": [
+    //             "<Esc>"
+    //         ]
+    //     }
+    // ],
+    "csharp.suppressDotnetInstallWarning": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
+    "cSpell.userWords": [
+        "Itamar",
+        "MULT",
+        "argparse",
+        "cuze",
+        "itertools",
+        "pytest",
+        "respawn"
+    ],
+    "editor.multiCursorModifier": "alt",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "bracketPairColorizer.highlightActiveScope": true,
+    "bracketPairColorizer.showBracketsInRuler": true,
+    "terminal.integrated.fontSize": 16,
+    "editor.fontSize": 15,
+    "vim.easymotionMarkerFontSize": "16",
+    "workbench.colorTheme": "Cobalt2",
+    "window.zoomLevel": 0,
+    "omnisharp.disableMSBuildDiagnosticWarning": true,
+    "todo-tree.highlights.enabled": true,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "vim.easymotion": true,
+    "vim.leader": " ",
+    "vim.easymotionMarkerBackgroundColor": "#5032a8",
+    "vim.easymotionMarkerHeight": 16,
+    "vim.easymotionMarkerWidthPerChar": 12,
+    "vim.statusBarColorControl": true,
+    "vim.replaceWithRegister": true,
+    "vim.surround": true,
+    "vim.timeout": 0,
+    "vim.gdefault": true,
+    "vim.highlightedyank.enable": true,
+    "vim.vimrc.enable": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "[markdown]": {
+        "editor.defaultFormatter": "mervin.markdown-formatter"
+    },
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--config=./game/lib/setup.cfg"
+    ],
+    "eslint.options": {
+        "configFile": "./game/lib/visualizer/config/.eslintrc",
+        "ignoreFile": "./game/lib/visualizer/config/.eslintignore"
+    },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/game/lib/plugins/**/manifest.json"
+            ],
+            "url": "/tools/schemas/manifest.schema.json"
+        }
+    ],
+    "path-intellisense.mappings": {
+        "~": "${workspaceRoot}/game/lib",
+        "~plugins": "${workspaceRoot}/game/lib/plugins",
+        "~root": "${workspaceRoot}/game/lib/plugins/root/visualizer/js",
+        "~src": "${workspaceRoot}/game/lib/visualizer/src",
+        "~PluginManager": "${workspaceRoot}/game/lib/visualizer/src/bin/PluginManager.json"
+    },
+    "todo-tree.tree.showScanModeButton": false
+}
