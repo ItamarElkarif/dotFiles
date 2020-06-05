@@ -21,6 +21,7 @@ set autoread
 set confirm
 set wildmenu                          " Tab autocomplete in command mode
 set nobackup nowritebackup " Turn off backup files
+set noundofile
 set path +=**           "" Allowing you to search files recursivly in root folder.
 noh
 
@@ -232,6 +233,7 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gd :Gvdiff<CR>
 
+nnoremap <S-S> :%s//g<Left><Left>
 
 nmap <C-S> :set spell<CR>
 
