@@ -1,6 +1,7 @@
+﻿set nocompatible
+
 filetype plugin indent on
 set encoding=UTF-8
-set nocompatible
 set tabstop=4
 set shiftwidth=4
 set nowrap
@@ -11,7 +12,6 @@ set virtualedit=onemore
 set relativenumber
 set number
 set hlsearch incsearch
-noh
 "" set spell Takes a lot of memory
 set splitright 
 set splitbelow
@@ -20,9 +20,12 @@ set tw=0
 set autoread
 set confirm
 set wildmenu                          " Tab autocomplete in command mode
-set nobackup nowritebackup noswapfile " Turn off backup files
+set nobackup nowritebackup " Turn off backup files
+set path +=**           "" Allowing you to search files recursivly in root folder.
+noh
 
-set shell=/bin/zsh
+"Only If ZSH: 
+""set shell=/bin/zsh
 set encoding=utf-8
 
 hi Search guibg=LightBlue
@@ -95,11 +98,7 @@ call plug#end()
 
 " Color Scheme
 set bg=dark
-let g:gruvbox_contrast_dark = "hard"
-colorscheme gruvbox
-" colorscheme onedark
-" highlight Normal ctermbg=None
-" highlight LineNr ctermfg=DarkGrey
+colorscheme badwolf
 
 " AirLine stuff
 let g:airline#extensions#tabline#enabled = 1
@@ -155,7 +154,7 @@ let $BASH_ENV = "$HOME/.zshrc"
 
 "======== Keys Remmaping ========
 " Makes the easymotion compatible with hjkl and made \ to easymotion leader leader
-map \ <Plug>(easymotion-prefix)
+map <Leader> <Plug>(easymotion-prefix)
 map \l <Plug>(easymotion-lineforward)
 map \j <Plug>(easymotion-j)
 map \k <Plug>(easymotion-k)
@@ -181,7 +180,7 @@ map <leader>r gr
 map <leader>c gc
 " noremap <a-cr> I<CR><Esc> NOT Working atm.
 noremap <CR> A<CR><Esc>
-map <leader>w :update<CR>
+map <silent><leader>w :update<CR>
 
 " Make the search also center the view
 noremap n nzz
@@ -201,7 +200,7 @@ imap <C-H> <Left>
 imap <C-L> <Right>
 
 " Made jj into Esc (Might replace with <CapsLock>)
-imap jj <Esc>
+inoremap jj <Esc>
 cmap jj <End><C-u><BS>
 
 " Easy tab navigation
@@ -254,3 +253,12 @@ command! RemoveTrailingWhitespaces :%s/\s\+$//e
  autocmd VimEnter * Mru .
 " For some reason it needs to be at the end of the file
 set showcmd
+
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
