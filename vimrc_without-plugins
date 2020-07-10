@@ -1,0 +1,134 @@
+set nocompatible
+
+filetype plugin indent on
+set encoding=UTF-8
+set tabstop=4
+set shiftwidth=4
+set nowrap
+set listchars=extends:→               " Show arrow if line continues rightwards
+set listchars+=precedes:←             " Show arrow if line continues leftwards
+set expandtab
+set virtualedit=onemore
+set relativenumber
+set number
+set hlsearch incsearch
+"" set spell Takes a lot of memory
+set splitright 
+set splitbelow
+set ignorecase 
+set smartcase
+set tw=0
+set autoread
+set confirm
+set wildmenu                          " Tab autocomplete in command mode
+set nobackup nowritebackup " Turn off backup files
+set noundofile
+" set path +=**  "Instead of fuzze Finder: Allowing you to search files recursivly in root folder.
+set history=500
+noh
+
+"Only If ZSH: 
+""set shell=/bin/zsh
+set encoding=utf-8
+
+hi Search guibg=LightBlue
+
+" Color Scheme
+set bg=dark
+
+"====[ Make the 121st column stand out ]====
+highlight ColorColumn ctermbg=darkblue
+call matchadd('ColorColumn', '\%121v', 100)
+
+"====Showing trail spaces====
+set listchars=nbsp:^,trail:.
+set list
+
+"======== Some lettings ========
+let g:mapleader = "\<Space>"
+
+" Set the git timer before checking for line updates
+set updatetime=100
+
+"" let $BASH_ENV = "$HOME/.zshrc"
+
+"======== Keys Remmaping ========
+
+" To exit buffers without closing vim.
+map <silent><leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+" map <leader>b <C-^>
+map <leader>b :bp<CR>
+
+map <silent><leader>n :noh<CR>
+" noremap <a-cr> I<CR><Esc> NOT Working atm.
+noremap <CR> A<CR><Esc>
+map <silent><leader>w :update<CR>
+
+" Make the search also center the view
+noremap n nzz
+noremap N Nzz
+
+" In command mode, make ctrl h/j/k/l to act as arrows.
+cmap <C-K> <Up>
+cmap <C-J> <Down>
+cmap <C-H> <Left>
+cmap <C-L> <Right>
+cmap <C-E> <Esc>
+
+" in insert mode, make ctrl h/j/k/l to act as arrows.
+imap <C-K> <Up>
+imap <C-J> <Down>
+imap <C-H> <Left>
+imap <C-L> <Right>
+
+" Skip the <C-w> stuff for hjkl with alt. NOTE: Doesn't work with neovim
+nnoremap  <C-H> <C-W><C-H>
+nnoremap  <C-J> <C-W><C-J>
+nnoremap  <C-K> <C-W><C-K>
+nnoremap  <C-L> <C-W><C-L>
+
+" Made jk into Esc (Might replace with <CapsLock>)
+inoremap jk <Esc>
+cmap jk <End><C-u><BS>
+
+" Easy tab navigation
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+" Move Up and Down in wraped if I use it
+nmap k gk
+nmap j gj
+
+nnoremap <S-S> :%s//g<Left><Left>
+
+nmap <C-S> :set spell<CR>
+
+"======== Some Commands ========
+
+" When reading a buffer, unfold all
+au BufRead * normal zR
+
+" Set autoread on cursor resting 4 sec or so (Or buff switch)
+"au FocusGained,BufEnter,CursorHold,CursorHoldI * if !bufexists("[Command Line]") | checktime | endif
+
+command! SumYanked :echo "Sum: " eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')) <bar> let @" = string(eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')))
+command! WriteSudo :update !sudo tee %
+command! CDC :lcd %:p:h
+command! Count :%s///gn
+command! RemoveTrailingWhitespaces :%s/\s\+$//e
+
+" Open most recently used files on start
+if has('Mru')
+    autocmd VimEnter * Mru .
+endif
+" For some reason it needs to be at the end of the file
+set showcmd
+
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
