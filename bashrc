@@ -1,0 +1,10 @@
+alias gp="git push"
+alias gpu='gp -u origin $(git_current_branch)'
+alias gl="git pull"
+alias glgm='git pull origin master'
+alias gcm="git commit -m"
+alias gcam="git commit -am"
+alias gd="git diff"
+alias gr="git reset"
+alias mkdir='mkdir -p'
+alias gst="git status -sb"
