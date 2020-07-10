@@ -1,4 +1,4 @@
-﻿set nocompatible
+set nocompatible
 
 filetype plugin indent on
 set encoding=UTF-8
@@ -15,7 +15,8 @@ set hlsearch incsearch
 "" set spell Takes a lot of memory
 set splitright 
 set splitbelow
-set ignorecase & smartcase
+set ignorecase 
+set smartcase
 set tw=0
 set autoread
 set confirm
@@ -43,8 +44,7 @@ Plug 'luochen1990/rainbow'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'wincent/Command-T'
 
 Plug 'scrooloose/nerdtree'
 " Plug 'tsony-tsonev/nerdtree-git-plugin'
@@ -56,6 +56,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-commentary' " gcc to comment a line
+Plug 'ervandew/supertab'
 
 " Some auto complete
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -88,7 +89,6 @@ Plug 'tpope/vim-speeddating'
 Plug 'metakirby5/codi.vim'
 
 Plug 'tpope/vim-unimpaired'
-
 
 " Languages: Python
 Plug 'klen/python-mode'
@@ -177,8 +177,8 @@ map <silent><leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 map <leader>b :bp<CR>
 
 map <silent><leader>n :noh<CR>
-map <leader>r gr
-map <leader>c gc
+nnoremap <leader>r gr
+nnoremap <leader>c gc
 " noremap <a-cr> I<CR><Esc> NOT Working atm.
 noremap <CR> A<CR><Esc>
 map <silent><leader>w :update<CR>
