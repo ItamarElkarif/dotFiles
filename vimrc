@@ -23,7 +23,8 @@ set confirm
 set wildmenu                          " Tab autocomplete in command mode
 set nobackup nowritebackup " Turn off backup files
 set noundofile
-set path +=**           "" Allowing you to search files recursivly in root folder.
+" set path +=**  "Instead of fuzze Finder: Allowing you to search files recursivly in root folder.
+set history=500
 noh
 
 "Only If ZSH: 
@@ -200,19 +201,23 @@ imap <C-J> <Down>
 imap <C-H> <Left>
 imap <C-L> <Right>
 
-" Made jj into Esc (Might replace with <CapsLock>)
-inoremap jj <Esc>
-cmap jj <End><C-u><BS>
-
-" Easy tab navigation
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-
 " Skip the <C-w> stuff for hjkl with alt. NOTE: Doesn't work with neovim
 nnoremap  <C-H> <C-W><C-H>
 nnoremap  <C-J> <C-W><C-J>
 nnoremap  <C-K> <C-W><C-K>
 nnoremap  <C-L> <C-W><C-L>
+
+" Made jk into Esc (Might replace with <CapsLock>)
+inoremap jk <Esc>
+cmap jk <End><C-u><BS>
+
+" Easy tab navigation
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+" Move Up and Down in wraped if I use it
+nmap k gk
+nmap j gj
 
 " Auto Formater (KeyBind and On Save)
 if exists(':Autoformat')
