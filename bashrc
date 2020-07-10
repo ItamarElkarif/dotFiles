@@ -7,3 +7,4 @@ alias gd="git diff"
 alias gr="git reset"
 alias mkdir='mkdir -p'
 alias gst="git status -sb"
+alias ga="git add"
