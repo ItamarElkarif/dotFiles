@@ -25,6 +25,7 @@ set nobackup nowritebackup " Turn off backup files
 set noundofile
 " set path +=**  "Instead of fuzze Finder: Allowing you to search files recursivly in root folder.
 set history=500
+set ai
 noh
 
 "Only If ZSH: 
@@ -115,6 +116,7 @@ command! SumYanked :echo "Sum: " eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+'
 command! WriteSudo :update !sudo tee %
 command! CDC :lcd %:p:h
 command! Count :%s///gn
+
 command! RemoveTrailingWhitespaces :%s/\s\+$//e
 
 " Open most recently used files on start
