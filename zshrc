@@ -85,7 +85,7 @@ alias run='$HOME/skillz/skillzpluggableengine/game/run.sh'
 alias testall='run tests --dc'
 alias CleanFolders='run clean && git clean -df'
 alias glgm='git pull origin master'
-alias gpu='gp -u origin $(git_current_branch)'
+alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 alias mkdir='mkdir -p'
 alias gst="gst -sb"
 
