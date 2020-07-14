@@ -1,4 +1,6 @@
 alias gp="git push"
+# Only if gitconfig with push.default current (like in gitconfig)
+alias gpu="git push -u"
 alias gl="git pull"
 alias glgm='git pull origin master'
 alias gcm="git commit -m"
