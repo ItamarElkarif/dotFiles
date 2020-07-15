@@ -100,7 +100,7 @@ nnoremap <C-Right> :tabnext<CR>
 nmap k gk
 nmap j gj
 
-nnoremap <S-S> :%s//gc<Left><Left>
+nnoremap <S-S> :%s//gc<Left><Left><Left>
 
 nmap <C-S> :set spell<CR>
 
