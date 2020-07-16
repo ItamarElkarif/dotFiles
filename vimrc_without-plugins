@@ -69,6 +69,9 @@ map <silent><leader>w :update<CR>
 noremap n nzz
 noremap N Nzz
 
+" Remove C-H deleting stuff (Auto Pairs plugin)
+iunmap <buffer> <C-H>
+
 " In command mode, make ctrl h/j/k/l to act as arrows.
 cmap <C-K> <Up>
 cmap <C-J> <Down>
@@ -103,9 +106,6 @@ nmap j gj
 nnoremap <S-S> :%s//gc<Left><Left><Left>
 
 nmap <C-S> :set spell<CR>
-
-" Remove C-H deleting stuff (Auto Pairs plugin)
-iunmap <buffer> <C-H>
 
 "======== Some Commands ========
 
