@@ -104,6 +104,9 @@ nnoremap <S-S> :%s//gc<Left><Left><Left>
 
 nmap <C-S> :set spell<CR>
 
+" Remove C-H deleting stuff (Auto Pairs plugin)
+iunmap <buffer> <C-H>
+
 "======== Some Commands ========
 
 " When reading a buffer, unfold all
