@@ -99,9 +99,6 @@ let g:NERDTreeGitStatusWithFlags = 1
 
 let g:highlightedyank_highlight_duration = 300
 
-" Remove C-H deleting stuff (Auto Pairs plugin)
-iunmap <buffer> <C-H>
-
 " Disable python rope and refarcotring, Turn the first one to 1 to create .ropeprojects everywhere.
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
