@@ -13,9 +13,9 @@ set relativenumber
 set number
 set hlsearch incsearch
 "" set spell Takes a lot of memory
-set splitright 
+set splitright
 set splitbelow
-set ignorecase 
+set ignorecase
 set smartcase
 set tw=0
 set autoread
@@ -28,7 +28,7 @@ set history=500
 set ai
 noh
 
-"Only If ZSH: 
+"Only If ZSH:
 ""set shell=/bin/zsh
 set encoding=utf-8
 
@@ -68,9 +68,6 @@ map <silent><leader>w :update<CR>
 " Make the search also center the view
 noremap n nzz
 noremap N Nzz
-
-" Remove C-H deleting stuff (Auto Pairs plugin)
-iunmap <buffer> <C-H>
 
 " In command mode, make ctrl h/j/k/l to act as arrows.
 cmap <C-K> <Up>

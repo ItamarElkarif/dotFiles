@@ -83,6 +83,8 @@ let g:rainbow_active = 1
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 "======== Some lettings ========
+" Remove C-H deleting stuff (Auto Pairs plugin)
+let g:AutoPairsMapCh = 0
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 let g:ctrlp_custom_ignore = {
