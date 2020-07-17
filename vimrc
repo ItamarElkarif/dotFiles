@@ -143,7 +143,7 @@ endif
 " Use <leader>g... to git commands
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>gw :Gwrite<CR>
-nmap <leader>gd :Gvdiff<CR>
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
 
 "======== Some Commands ========
