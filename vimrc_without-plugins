@@ -17,6 +17,7 @@ set splitright
 set splitbelow
 set ignorecase
 set smartcase
+set gdefault " use the `g` flag by default.
 set tw=0
 set autoread
 set confirm

@@ -12,7 +12,7 @@ Plug 'luochen1990/rainbow'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-" Plug 'wincent/Command-T'
+Plug 'wincent/Command-T'
 
 Plug 'scrooloose/nerdtree'
 " Plug 'tsony-tsonev/nerdtree-git-plugin'
@@ -20,7 +20,6 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons' " Doesn't work with the font
 
-Plug 'kien/ctrlp.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-commentary' " gcc to comment a line
@@ -38,6 +37,7 @@ Plug 'vim-scripts/ReplaceWithRegister' " gr(motion) is to replace
 Plug 'easymotion/vim-easymotion' " <Leader><Leader>f/k/j to easymotion
 
 " Plug 'nathanaelkane/vim-indent-guides'
+
 " Custom textobj
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
@@ -87,10 +87,6 @@ let g:rainbow_active = 1
 let g:AutoPairsMapCh = 0
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll|pyc)$'
-            \ }
 let g:NERDTreeIgnoremap = ['\.swp$', '^\.pyc$']
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeShowBookmarks = 1
@@ -118,7 +114,7 @@ map s <Plug>(easymotion-s)
 map <silent><C-b> :NERDTreeToggle<CR>
 
 " Opens The buffer list of ctrlp
-map <leader><Tab> <C-p><C-f>
+" map <leader><Tab> <C-p><C-f>
 
 " python stuff bnd to leader p.
 let g:pymode_breakpoint_bind = '<leader>pb'
