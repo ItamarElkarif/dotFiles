@@ -62,6 +62,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-snippets'
 
 Plug 'jremmen/vim-ripgrep'
+Plug 'Yggdroot/LeaderF'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -95,7 +96,7 @@ let g:NERDTreeShowLineNumbers = 1
 
 " Remove C-H deleting stuff (Auto Pairs plugin)
 let g:AutoPairsMapCh = 0
-
+let g:highlightedyank_highlight_duration = 200
 "======== Keys Remmaping ========
 
 " Makes the easymotion compatible with hjkl
@@ -136,3 +137,5 @@ nmap <silent><F6> <Plug>(coc-rename)
 nmap <silent><F2> <Plug>(coc-diagnostic-next)
 nmap <silent><S-F2> <Plug>(coc-diagnostic-prev)
 nmap <silent>gh <Plug>(coc-diagnostic-info)
+nmap <silent><C-space> <Plug>(coc-fix-current)
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
