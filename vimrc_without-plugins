@@ -2,12 +2,9 @@ set nocompatible
 
 filetype plugin indent on
 set encoding=UTF-8
-set tabstop=4
-set shiftwidth=4
 set nowrap
 set listchars=extends:→               " Show arrow if line continues rightwards
 set listchars+=precedes:←             " Show arrow if line continues leftwards
-set expandtab
 set virtualedit=onemore
 set relativenumber
 set number
@@ -17,6 +14,7 @@ set splitright
 set splitbelow
 set ignorecase
 set smartcase
+set gdefault " use the `g` flag by default.
 set tw=0
 set autoread
 set confirm
@@ -25,7 +23,12 @@ set nobackup nowritebackup " Turn off backup files
 set noundofile
 " set path +=**  "Instead of fuzze Finder: Allowing you to search files recursivly in root folder.
 set history=500
+set smarttab
 set ai
+set smartindent 
+set tabstop=4 
+set shiftwidth=4
+set noexpandtab 
 noh
 
 "Only If ZSH:
@@ -42,7 +45,7 @@ highlight ColorColumn ctermbg=darkblue
 call matchadd('ColorColumn', '\%121v', 100)
 
 "====Showing trail spaces====
-set listchars=nbsp:^,trail:.
+set listchars=nbsp:^,trail:.,tab:>~
 set list
 
 "======== Some lettings ========
@@ -100,7 +103,7 @@ nnoremap <C-Right> :tabnext<CR>
 nmap k gk
 nmap j gj
 
-nnoremap <S-S> :%s//gc<Left><Left><Left>
+nnoremap <S-S> :%s//c<Left><Left>
 
 nmap <C-S> :set spell<CR>
 
@@ -115,7 +118,7 @@ au BufRead * normal zR
 command! SumYanked :echo "Sum: " eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')) <bar> let @" = string(eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')))
 command! WriteSudo :update !sudo tee %
 command! CDC :lcd %:p:h
-command! Count :%s///gn
+command! Count :%s///n
 
 command! RemoveTrailingWhitespaces :%s/\s\+$//e
 
@@ -123,6 +126,7 @@ command! RemoveTrailingWhitespaces :%s/\s\+$//e
 if has('Mru')
     autocmd VimEnter * Mru .
 endif
+
 " For some reason it needs to be at the end of the file
 set showcmd
 
