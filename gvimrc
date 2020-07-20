@@ -83,6 +83,7 @@ Plug 'thinca/vim-textobj-comment'
 call plug#end()
 
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 
 "======== Some lettings ========
 let g:mapleader = "\<Space>"
@@ -137,5 +138,6 @@ nmap <silent><F6> <Plug>(coc-rename)
 nmap <silent><F2> <Plug>(coc-diagnostic-next)
 nmap <silent><S-F2> <Plug>(coc-diagnostic-prev)
 nmap <silent>gh <Plug>(coc-diagnostic-info)
+nnoremap <silent><leader>gr <Plug>(coc-references)
 nmap <silent><C-space> <Plug>(coc-fix-current)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile

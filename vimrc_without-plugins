@@ -27,8 +27,10 @@ set smarttab
 set ai
 set smartindent 
 set tabstop=4 
+set softtabstop=4 
 set shiftwidth=4
-set noexpandtab 
+set noet
+set noerrorbells
 noh
 
 "Only If ZSH:
@@ -41,7 +43,7 @@ hi Search guibg=LightBlue
 set bg=dark
 
 "====[ Make the 121st column stand out ]====
-highlight ColorColumn ctermbg=darkblue
+highlight ColorColumn ctermbg=yellow
 call matchadd('ColorColumn', '\%121v', 100)
 
 "====Showing trail spaces====
