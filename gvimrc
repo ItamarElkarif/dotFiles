@@ -68,6 +68,8 @@ let g:highlightedyank_highlight_duration = 200
 
 " GitGutter
 autocmd BufReadPost,CursorHold,CursorHoldI,WinEnter * :GitGutterAll
+nmap ) <Plug>(GitGutterNextHunk)
+nmap ( <Plug>(GitGutterPrevHunk)
 
 " ======== Keys Remmaping ========
 
