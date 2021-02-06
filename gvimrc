@@ -67,7 +67,6 @@ let g:AutoPairsMapCh = 0
 let g:highlightedyank_highlight_duration = 200
 
 " GitGutter
-" let g:gitgutter_enabled = 1
 autocmd BufReadPost,CursorHold,CursorHoldI,WinEnter * :GitGutterAll
 
 " ======== Keys Remmaping ========
