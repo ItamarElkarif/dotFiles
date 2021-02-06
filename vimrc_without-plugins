@@ -9,7 +9,7 @@ set virtualedit=onemore
 set relativenumber
 set number
 set hlsearch incsearch
-"" set spell Takes a lot of memory
+"" set spell "Takes a lot of memory
 set splitright
 set splitbelow
 set ignorecase
@@ -30,7 +30,7 @@ set tabstop=4
 set softtabstop=4 
 set shiftwidth=4
 set noet
-set noerrorbells
+set belloff=all
 noh
 
 "Only If ZSH:
