@@ -58,17 +58,23 @@ set updatetime=100
 
 "" let $BASH_ENV = "$HOME/.zshrc"
 
+" Making cursor square
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
 "======== Keys Remmaping ========
 
 " To exit buffers without closing vim.
-map <silent><leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+map <silent><leader>q :bp<bar>bd #<CR>
 " map <leader>b <C-^>
 map <leader>b :bp<CR>
 
 map <silent><leader>n :noh<CR>
 " noremap <a-cr> I<CR><Esc> NOT Working atm.
 noremap <CR> A<CR><Esc>
-map <silent><leader>w :update<CR>
+map <silent><leader>w :w<CR>
 
 " Make the search also center the view
 noremap n nzz
@@ -105,7 +111,11 @@ nnoremap <C-Right> :tabnext<CR>
 nmap k gk
 nmap j gj
 
-nnoremap <S-S> :%s//c<Left><Left>
+" Make c-e c-y 3 times more effective
+nnoremap <C-E> 3<C-E>
+nnoremap <C-Y> 3<C-Y>
+
+nnoremap <S-S> :%s/\v/c<Left><Left>
 
 nmap <C-S> :set spell<CR>
 

@@ -98,6 +98,7 @@ let g:NERDTreeShowLineNumbers = 1
 " Remove C-H deleting stuff (Auto Pairs plugin)
 let g:AutoPairsMapCh = 0
 let g:highlightedyank_highlight_duration = 200
+
 "======== Keys Remmaping ========
 
 " Makes the easymotion compatible with hjkl
@@ -111,13 +112,20 @@ map <silent><C-b> :NERDTreeToggle<CR>
 map <leader>r gr
 map \ <Plug>(easymotion-prefix)
 
+nnoremap <c-c> "+y
+vnoremap <c-v> "+p
+
 " Use <leader>g... to git commands
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gd :Gvdiff<CR>
 
-"======== Some Coc ========
+" Use C-Tab for bp and bn
+map <C-Tab> :bn<CR>
+map <C-S-Tab> :bp<CR>
+
+" ======== Some Coc ========
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ?
