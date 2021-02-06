@@ -120,8 +120,8 @@ map <silent><C-b> :NERDTreeToggle<CR>
 let g:pymode_breakpoint_bind = '<leader>pb'
 let g:pymode_run_bind = '<leader>pr'
 
-nnoremap <leader>r gr
-nnoremap <leader>c gc
+nmap <leader>r gr
+nmap <leader>c gc
 
 " Auto Formater (KeyBind and On Save)
 if exists(':Autoformat')

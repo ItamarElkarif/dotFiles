@@ -1,43 +1,10 @@
 source $VIMRUNTIME/vimrc_example.vim
 behave xterm
-"set diffexpr=MyDiff()
-"function MyDiff()
-  "let opt = '-a --binary '
-  "if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  "if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  "let arg1 = v:fname_in
-  "if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  "let arg1 = substitute(arg1, '!', '\!', 'g')
-  "let arg2 = v:fname_new
-  "if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  "let arg2 = substitute(arg2, '!', '\!', 'g')
-  "let arg3 = v:fname_out
-  "if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  "let arg3 = substitute(arg3, '!', '\!', 'g')
-  "if $VIMRUNTIME =~ ' '
-    "if &sh =~ '\<cmd'
-      "if empty(&shellxquote)
-        "let l:shxq_sav = ''
-        "set shellxquote&
-      "endif
-      "let cmd = '"' . $VIMRUNTIME . '\diff"'
-    "else
-      "let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    "endif
-  "else
-    "let cmd = $VIMRUNTIME . '\diff'
-  "endif
-  "let cmd = substitute(cmd, '!', '\!', 'g')
-  "silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-  "if exists('l:shxq_sav')
-    "let &shellxquote=l:shxq_sav
-  "endif
-"endfunction
 
 source D:\\Documents\\DotFiles\\vimrc_without-plugins
 set guifont=Courier_New:h14
 
-call plug#begin('D:/Program Files/Vim/vimfiles/.vim/plugged')
+call plug#begin('D:/Program\ Files/Vim/vimfiles/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
@@ -99,7 +66,11 @@ let g:NERDTreeShowLineNumbers = 1
 let g:AutoPairsMapCh = 0
 let g:highlightedyank_highlight_duration = 200
 
-"======== Keys Remmaping ========
+" GitGutter
+" let g:gitgutter_enabled = 1
+autocmd BufReadPost,CursorHold,CursorHoldI,WinEnter * :GitGutterAll
+
+" ======== Keys Remmaping ========
 
 " Makes the easymotion compatible with hjkl
 map \l <Plug>(easymotion-lineforward)
@@ -109,8 +80,10 @@ map \h <Plug>(easymotion-linebackward)
 
 map <silent><C-b> :NERDTreeToggle<CR>
 " map <leader><Tab> <C-p><C-f>
-map <leader>r gr
-map \ <Plug>(easymotion-prefix)
+nmap <leader>r gr
+nmap <leader>c gc
+nmap s <Plug>(easymotion-f)
+nmap S <Plug>(easymotion-F)
 
 nnoremap <c-c> "+y
 vnoremap <c-v> "+p
@@ -124,6 +97,9 @@ nmap <leader>gd :Gvdiff<CR>
 " Use C-Tab for bp and bn
 map <C-Tab> :bn<CR>
 map <C-S-Tab> :bp<CR>
+
+" ======== Some Commands ========
+command! EditSettings :e D:\Documents\DotFiles\gvimrc
 
 " ======== Some Coc ========
 inoremap <silent><expr> <TAB>
