@@ -115,6 +115,10 @@ nmap j gj
 nnoremap <C-E> 3<C-E>
 nnoremap <C-Y> 3<C-Y>
 
+" Make <C-C> and <C-V> work with + register on vmod
+vnoremap <C-V> "+p
+vnoremap <C-C> "+y
+
 nnoremap <S-S> :%s/\v/c<Left><Left>
 
 nmap <C-S> :set spell<CR>
