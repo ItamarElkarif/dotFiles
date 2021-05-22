@@ -31,6 +31,8 @@ set softtabstop=4
 set shiftwidth=4
 set noet
 set belloff=all
+set formatoptions+=j " Delete comment character when joining commented lines
+set colorcolumn=80
 noh
 
 "Only If ZSH:
@@ -43,8 +45,10 @@ hi Search guibg=LightBlue
 set bg=dark
 
 "====[ Make the 121st column stand out ]====
-highlight ColorColumn ctermbg=yellow
-call matchadd('ColorColumn', '\%121v', 100)
+if !has('nvim') 
+	highlight ColorColumn ctermbg=yellow
+	call matchadd('ColorColumn', '\%121v', 100)
+endif 
 
 "====Showing trail spaces====
 set listchars=nbsp:^,trail:.,tab:>~
@@ -93,19 +97,19 @@ imap <C-J> <Down>
 imap <C-H> <Left>
 imap <C-L> <Right>
 
-" Skip the <C-w> stuff for hjkl with alt. NOTE: Doesn't work with neovim
-nnoremap  <C-H> <C-W><C-H>
-nnoremap  <C-J> <C-W><C-J>
-nnoremap  <C-K> <C-W><C-K>
-nnoremap  <C-L> <C-W><C-L>
+" Skip the <c-w> stuff for hjkl with alt. 
+noremap  <M-h> <C-W><C-h>
+noremap  <M-j> <C-W><C-j>
+noremap  <M-k> <C-W><C-k>
+noremap  <M-l> <C-W><C-l>
 
 " Made jk into Esc (Might replace with <CapsLock>)
 inoremap jk <Esc>
 cmap jk <End><C-u><BS>
 
 " Easy tab navigation
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <S-Left> :tabprevious<CR>
+nnoremap <S-Right> :tabnext<CR>
 
 " Move Up and Down in wraped if I use it
 nmap k gk
@@ -116,13 +120,18 @@ nnoremap <C-E> 3<C-E>
 nnoremap <C-Y> 3<C-Y>
 
 " Make <C-C> and <C-V> work with + register on vmod
-vnoremap <C-V> "+p
-vnoremap <C-C> "+y
+vnoremap <leader>P "+P
+vnoremap <leader>P "+P
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
 
 nnoremap <S-S> :%s/\v/c<Left><Left>
 
 nmap <C-S> :set spell<CR>
 
+nnoremap <silent> <C-6> <C-^>
 "======== Some Commands ========
 
 " When reading a buffer, unfold all
@@ -154,3 +163,6 @@ let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_winsize = 25
+vnoremap <leader>p "+p
+
