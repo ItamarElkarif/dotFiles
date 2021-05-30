@@ -8,31 +8,37 @@ set listchars+=precedes:←             " Show arrow if line continues leftwards
 set virtualedit=onemore
 set relativenumber
 set number
-set hlsearch incsearch
+set nohlsearch incsearch
+set hidden
 "" set spell "Takes a lot of memory
 set splitright
-set splitbelow
 set ignorecase
 set smartcase
 set gdefault " use the `g` flag by default.
-set tw=0
 set autoread
 set confirm
 set wildmenu                          " Tab autocomplete in command mode
 set nobackup nowritebackup " Turn off backup files
-set noundofile
+set noundofile noswapfile
 " set path +=**  "Instead of fuzze Finder: Allowing you to search files recursivly in root folder.
 set history=500
+
+set tw=0
 set smarttab
 set ai
 set smartindent 
 set tabstop=4 
 set softtabstop=4 
 set shiftwidth=4
+
 set noet
 set belloff=all
 set formatoptions+=j " Delete comment character when joining commented lines
+set scrolloff=8
 set colorcolumn=80
+set signcolumn=yes
+set sidescrolloff=5
+set cmdheight=2
 noh
 
 "Only If ZSH:
@@ -43,12 +49,6 @@ hi Search guibg=LightBlue
 
 " Color Scheme
 set bg=dark
-
-"====[ Make the 121st column stand out ]====
-if !has('nvim') 
-	highlight ColorColumn ctermbg=yellow
-	call matchadd('ColorColumn', '\%121v', 100)
-endif 
 
 "====Showing trail spaces====
 set listchars=nbsp:^,trail:.,tab:>~
@@ -89,13 +89,16 @@ cmap <C-K> <Up>
 cmap <C-J> <Down>
 cmap <C-H> <Left>
 cmap <C-L> <Right>
-cmap <C-E> <Esc>
+cmap <C-E> <End>
+cmap <C-B> <Home>
 
 " in insert mode, make ctrl h/j/k/l to act as arrows.
 imap <C-K> <Up>
 imap <C-J> <Down>
 imap <C-H> <Left>
 imap <C-L> <Right>
+imap <C-E> <End>
+imap <C-B> <Home>
 
 " Skip the <c-w> stuff for hjkl with alt. 
 noremap  <M-h> <C-W><C-h>
@@ -119,17 +122,17 @@ nmap j gj
 nnoremap <C-E> 3<C-E>
 nnoremap <C-Y> 3<C-Y>
 
-" Make <C-C> and <C-V> work with + register on vmod
+" Make leader Y/P work with + register on vmod
 vnoremap <leader>P "+P
-vnoremap <leader>P "+P
-nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 nnoremap <leader>P "+P
+nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 
 nnoremap <S-S> :%s/\v/c<Left><Left>
 
-nmap <C-S> :set spell<CR>
+nmap <C-S> <cmd>set spel!l<CR>
 
 nnoremap <silent> <C-6> <C-^>
 "======== Some Commands ========

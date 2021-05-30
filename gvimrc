@@ -1,11 +1,10 @@
 source D:\Documents\DotFiles\vimrc_without-plugins
-set guifont=Courier_New:h14
-set guifont=Fira_Code:h14
+set guifont=FiraCode:h14
 
 call plug#begin('D:/Program\ Files/Vim/vimfiles/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-	Plug 'morhetz/gruvbox'
+	Plug 'gruvbox-community/gruvbox'
 
 	Plug 'scrooloose/nerdtree'
 	" Plug 'tsony-tsonev/nerdtree-git-plugin'
@@ -39,10 +38,12 @@ call plug#begin('D:/Program\ Files/Vim/vimfiles/.vim/plugged')
 	Plug 'kana/vim-textobj-line'
 	Plug 'thinca/vim-textobj-comment'
 
+	Plug 'dbeniamine/cheat.sh-vim'
 	if has('nvim')
 		Plug 'nvim-lua/popup.nvim'
 		Plug 'nvim-lua/plenary.nvim'
 		Plug 'nvim-telescope/telescope.nvim'
+		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	endif
 
 call plug#end()
@@ -119,5 +120,5 @@ command! EditSettings :e D:\Documents\DotFiles\gvimrc
 	nmap <silent><S-F2> <Plug>(coc-diagnostic-prev)
 	nmap <silent>gh <Plug>(coc-diagnostic-info)
 	nnoremap <silent><leader>gr <Plug>(coc-references)
-	nmap <silent><C-space> <Plug>(coc-fix-current)
+	nmap <silent><M-CR> <Plug>(coc-fix-current)
 	command! -nargs=0 Prettier :CocCommand prettier.formatFile
