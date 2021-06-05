@@ -23,7 +23,7 @@ call plug#begin('D:/Program\ Files/Vim/vimfiles/.vim/plugged')
 
 	Plug 'jremmen/vim-ripgrep'
 
-	Plug 'airblade/vim-gitgutter'
+	Plug 'mhinz/vim-signify'
 	Plug 'tpope/vim-fugitive'
 
 	Plug 'tpope/vim-repeat'
@@ -64,16 +64,27 @@ let  g:NERDTreeDirArrowExpandable = '>'
 let  g:NERDTreeDirArrowCollapsible = '<'
 
 " Remove C-H deleting stuff (Auto Pairs plugin)
+let g:AutoPairsMapCh = 0
 inoremap <C-H> <Left>
 cnoremap <C-H> <Left>
 
 " Currently using nvim autocmd
 " let g:highlightedyank_highlight_duration = 200
 
-" GitGutter
-autocmd BufReadPost,CursorHold,CursorHoldI,WinEnter * :GitGutterAll
-nmap ) <Plug>(GitGutterNextHunk)
-nmap ( <Plug>(GitGutterPrevHunk)
+" Signify
+	" Jump via hunks!
+	nmap ) ]c
+	nmap ( [c
+
+	" Hunk textobj
+	omap ic <plug>(signify-motion-inner-pending)
+	xmap ic <plug>(signify-motion-inner-visual)
+	omap ac <plug>(signify-motion-outer-pending)
+	xmap ac <plug>(signify-motion-outer-visual)
+	
+	" Change sings
+	let g:signify_sign_change = '~'
+	let g:signify_sign_show_count = 0
 
 " ======== Keys Remmaping ========
 

@@ -141,7 +141,7 @@ nnoremap <silent> <C-6> <C-^>
 au BufRead * normal zR
 
 " Set autoread on cursor resting 4 sec or so (Or buff switch)
-"au FocusGained,BufEnter,CursorHold,CursorHoldI * if !bufexists("[Command Line]") | checktime | endif
+au FocusGained,BufEnter,CursorHold,CursorHoldI * if !bufexists("[Command Line]") | checktime | endif
 
 command! SumYanked :echo "Sum: " eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')) <bar> let @" = string(eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')))
 command! WriteSudo :update !sudo tee %

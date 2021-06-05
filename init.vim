@@ -19,3 +19,5 @@ augroup END
 
 " Highlight yank
 au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=200}
+
+nnoremap <leader>t <silent>:wincmd s<bar> :wincmd J<bar> :resize 12 <bar>:terminal<CR>
