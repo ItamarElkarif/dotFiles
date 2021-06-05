@@ -12,7 +12,6 @@ call plug#begin('D:/Program\ Files/Vim/vimfiles/.vim/plugged')
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 	" Plug 'ryanoasis/vim-devicons' " Doesn't work with the font
 
-	" Plug 'machakann/vim-highlightedyank'
 	Plug 'nathanaelkane/vim-indent-guides'
 	" Plug 'mg979/vim-visual-multi'
 	Plug 'tpope/vim-commentary' " gcc to comment a line
@@ -44,6 +43,8 @@ call plug#begin('D:/Program\ Files/Vim/vimfiles/.vim/plugged')
 		Plug 'nvim-lua/plenary.nvim'
 		Plug 'nvim-telescope/telescope.nvim'
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	else
+		Plug 'machakann/vim-highlightedyank'
 	endif
 
 call plug#end()
@@ -68,8 +69,9 @@ let g:AutoPairsMapCh = 0
 inoremap <C-H> <Left>
 cnoremap <C-H> <Left>
 
-" Currently using nvim autocmd
-" let g:highlightedyank_highlight_duration = 200
+if !has('nvim')
+	let g:highlightedyank_highlight_duration = 200
+endif
 
 " Signify
 	" Jump via hunks!
