@@ -4,7 +4,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = OnionGrief
+    name = 9itamar9
     email = 9itamar9@gmail.com
 
 [alias]

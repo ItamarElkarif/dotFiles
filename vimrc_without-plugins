@@ -8,30 +8,13 @@ set listchars+=precedes:←             " Show arrow if line continues leftwards
 set virtualedit=onemore
 set relativenumber
 set number
+set ignorecase smartcase
 set nohlsearch incsearch
 set hidden
 "" set spell "Takes a lot of memory
-set splitright
-set ignorecase
-set smartcase
-set gdefault " use the `g` flag by default.
-set autoread
-set confirm
-set wildmenu                          " Tab autocomplete in command mode
-set nobackup nowritebackup " Turn off backup files
-set noundofile noswapfile
-" set path +=**  "Instead of fuzze Finder: Allowing you to search files recursivly in root folder.
-set history=500
+set splitbelow
 
-set tw=0
-set smarttab
-set ai
-set smartindent 
-set tabstop=4 
-set softtabstop=4 
-set shiftwidth=4
-
-set noet
+set noexpandtab
 set belloff=all
 set formatoptions+=j " Delete comment character when joining commented lines
 set scrolloff=8
@@ -39,12 +22,10 @@ set colorcolumn=80
 set signcolumn=yes
 set sidescrolloff=5
 set cmdheight=2
+set sw=4
 noh
 
-"Only If ZSH:
-""set shell=/bin/zsh
 set encoding=utf-8
-
 hi Search guibg=LightBlue
 
 " Color Scheme
@@ -60,8 +41,6 @@ let g:mapleader = "\<Space>"
 " Set the git timer before checking for line updates
 set updatetime=100
 
-"" let $BASH_ENV = "$HOME/.zshrc"
-
 " Making cursor square
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
@@ -69,14 +48,17 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
 "======== Keys Remmaping ========
+nnoremap Y y$
 
 " To exit buffers without closing vim.
 map <silent><leader>q :bp<bar>bd #<CR>
 " map <leader>b <C-^>
 map <leader>b :bp<CR>
+map <leader>n :bn<CR>
 
-map <silent><leader>n :noh<CR>
-" noremap <a-cr> I<CR><Esc> NOT Working atm.
+" Only if set hlsearch
+" map <silent><leader>n :noh<CR>
+"
 noremap <CR> A<CR><Esc>
 map <silent><leader>w :w<CR>
 
@@ -130,9 +112,7 @@ nnoremap <leader>p "+p
 vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 
-nnoremap <S-S> :%s/\v/c<Left><Left>
-
-nmap <C-S> <cmd>set spel!l<CR>
+nnoremap <C-S> :%s//c<Left><Left>
 
 nnoremap <silent> <C-6> <C-^>
 "======== Some Commands ========
@@ -169,3 +149,6 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_winsize = 25
 vnoremap <leader>p "+p
 
+" Opens help in vertical
+autocmd! FileType help :wincmd L | :vert resize 80
+cabbrev help vert help

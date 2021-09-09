@@ -20,4 +20,4 @@ augroup END
 " Highlight yank
 au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=200}
 
-nnoremap <silent><leader>t :wincmd s<bar> :wincmd J<bar> :resize 12 <bar>:terminal<CR>
+nnoremap <silent><leader>t :12sp<bar>:call termopen('powershell')<CR>a
