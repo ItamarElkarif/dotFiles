@@ -17,9 +17,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'gruvbox-community/gruvbox'
 	Plug 'mhinz/vim-startify'
 
-
 	" Should I replce with native lsp?
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc-snippets'
+
+	Plug 'jremmen/vim-ripgrep'
 
 	Plug 'mhinz/vim-signify'
 	Plug 'tpope/vim-fugitive'
@@ -47,11 +49,11 @@ call plug#begin('~/.vim/plugged')
 		Plug 'machakann/vim-highlightedyank'
 	endif
 
-	Plug 'jremmen/vim-ripgrep'
-
 call plug#end()
 
 colorscheme gruvbox
+let g:airline#extensions#tabline#enabled = 1
+
 let g:gruvbox_contrast_dark = 'hard'
 
 "======== Some lettings ========
@@ -61,31 +63,41 @@ let g:mapleader = "\<Space>"
 let g:AutoPairsMapCh = 0
 
 " ======== Keys Remmaping ========
-" Improving f\F with sneak and s easymotion like
+if !has('nvim')
+	let g:highlightedyank_highlight_duration = 200
+endif
+
+" Signify
+	" Jump via hunks!
+	nmap ) ]c
+	nmap ( [c
+
+	" Hunk textobj
+	omap ic <plug>(signify-motion-inner-pending)
+	xmap ic <plug>(signify-motion-inner-visual)
+	omap ac <plug>(signify-motion-outer-pending)
+	xmap ac <plug>(signify-motion-outer-visual)
+	
+	" Change sings
+	let g:signify_sign_change = '~'
+	let g:signify_sign_show_count = 0
+
+" ======== Keys Remmaping ========
+" Improving f\F with sneak
 if has_key(plugs, "vim-sneak")
-    let g:sneak#label = 1
     map f <Plug>Sneak_f
     map F <Plug>Sneak_F
     map t <Plug>Sneak_t
     map T <Plug>Sneak_T
 endif
 
-"Signify
-    let g:signify_sign_change = '~'
-    let g:signify_sign_show_count = 0
-	nmap ( <plug>(signify-next-hunk)
-	nmap ) <plug>(signify-prev-hunk)
-
-    omap ic <plug>(signify-motion-inner-pending)
-    xmap ic <plug>(signify-motion-inner-visual)
-    omap ac <plug>(signify-motion-outer-pending)
-    xmap ac <plug>(signify-motion-outer-visual)
-
-nmap <leader>r gr
-nmap <leader>c gc
-
 nnoremap <c-c> "+y
 vnoremap <c-v> "+p
+
+" map <leader><Tab> <C-p><C-f>
+nmap <leader>r gr
+nmap <leader>c gc
+vmap <leader>c gc
 
 " Use <leader>g... to git commands
 nmap <leader>gc :Gcommit<CR>
@@ -93,9 +105,6 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gd :Gvdiff<CR>
 
-" Use C-Tab for bp and bn
-map <C-Tab> :bn<CR>
-map <C-S-Tab> :bp<CR>
-
 " ======== Some Commands ========
 execute 'command! EditSettings :e ' . g:dotFilesPath . 'gvimrc'
+execute 'source ' . g:dotFilesPath . 'coc-config.vim'

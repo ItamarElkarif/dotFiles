@@ -40,18 +40,11 @@ set sidescrolloff=5
 set cmdheight=2
 noh
 
-"Only If ZSH:
-""set shell=/bin/zsh
 set encoding=utf-8
-
 hi Search guibg=LightBlue
 
 " Color Scheme
 set bg=dark
-
-"====[ Make the 121st column stand out ]====
-highlight ColorColumn ctermbg=yellow
-call matchadd('ColorColumn', '\%121v', 100)
 
 "====Showing trail spaces====
 set listchars=nbsp:^,trail:.,tab:>~
@@ -63,8 +56,6 @@ let g:mapleader = "\<Space>"
 " Set the git timer before checking for line updates
 set updatetime=100
 
-"" let $BASH_ENV = "$HOME/.zshrc"
-
 " Making cursor square
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
@@ -72,14 +63,20 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
 "======== Keys Remmaping ========
+nnoremap Y y$
 
 " To exit buffers without closing vim.
 map <silent><leader>q :bp<bar>bd #<CR>
 " map <leader>b <C-^>
 map <leader>b :bp<CR>
+map <leader>n :bn<CR>
 
 map <silent><leader>n :bn<CR>
 " noremap <a-cr> I<CR><Esc> NOT Working atm.
+"
+" Only if set hlsearch
+" map <silent><leader>n :noh<CR>
+
 noremap <CR> A<CR><Esc>
 map <silent><leader>w :w<CR>
 
@@ -98,6 +95,8 @@ imap <C-K> <Up>
 imap <C-J> <Down>
 imap <C-H> <Left>
 imap <C-L> <Right>
+imap <C-E> <End>
+imap <C-B> <Home>
 
 " Skip the <C-w> stuff for hjkl with alt
 nnoremap  <m-h> <C-W><C-H>
@@ -114,8 +113,8 @@ nnoremap <S-Up> :cprev<CR>
 nnoremap <S-Down> :cnext<CR>
 
 " Easy tab navigation
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <S-Left> :tabprevious<CR>
+nnoremap <S-Right> :tabnext<CR>
 
 " Move Up and Down in wraped if I use it
 nmap k gk
@@ -125,8 +124,17 @@ nmap j gj
 nnoremap <C-E> 3<C-E>
 nnoremap <C-Y> 3<C-Y>
 
-nnoremap <C-S> :%s/\v/c<Left><Left>
+" Make leader Y/P work with + register on vmod
+vnoremap <leader>P "+P
+vnoremap <leader>p "+p
+nnoremap <leader>P "+P
+nnoremap <leader>p "+p
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
 
+nnoremap <C-S> :%s//c<Left><Left>
+
+nnoremap <silent> <C-6> <C-^>
 "======== Some Commands ========
 
 command! SumYanked :echo "Sum: " eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')) <bar> let @" = string(eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')))
@@ -147,3 +155,9 @@ let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_winsize = 25
+vnoremap <leader>p "+p
+
+" Opens help in vertical
+autocmd! FileType help :wincmd L | :vert resize 80
+cabbrev help vert help

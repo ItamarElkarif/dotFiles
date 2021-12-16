@@ -10,7 +10,6 @@
     	  return !col || getline('.')[col - 1]  =~# '\s'
     	endfunction
 
-
 "==================Current - completion==================
     " Use <c-space> to trigger completion.
     " if has('nvim')
