@@ -1,33 +1,35 @@
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
 [user]
-	name = OnionGrief
     email = 9itamar9@gmail.com
+    name = 9itamar9
 
 [alias]
-	co = checkout
-        cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
+    co = checkout
+    cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 
 [color "diff"]
-        meta = yellow 
+    meta = yellow 
 
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim --noplugin
-[apply]
-	whitespace = nowarn
+    excludesfile = ~/.gitignore
+    editor = vim --noplugin
 
-[alias]
-      lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[apply]
+    whitespace = nowarn
+
 [help]
-	autocorrect = 1
+    autocorrect = 1
 
 [push]
     default = current

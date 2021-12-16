@@ -3,24 +3,21 @@ set nocompatible
 filetype plugin indent on
 set encoding=UTF-8
 set nowrap
-set listchars=extends:→               " Show arrow if line continues rightwards
+set listchars+=extends:→              " Show arrow if line continues rightwards
 set listchars+=precedes:←             " Show arrow if line continues leftwards
 set virtualedit=onemore
-set relativenumber
 set number
-set hlsearch incsearch
+set relativenumber
+set ignorecase smartcase
+set nohlsearch incsearch gdefault
+set hidden
 "" set spell "Takes a lot of memory
-set splitright
-set splitbelow
-set ignorecase
-set smartcase
+set splitright splitbelow
 set gdefault " use the `g` flag by default.
 set tw=0
 set autoread
 set confirm
-set wildmenu                          " Tab autocomplete in command mode
 set nobackup nowritebackup " Turn off backup files
-set noundofile
 " set path +=**  "Instead of fuzze Finder: Allowing you to search files recursivly in root folder.
 set history=500
 set smarttab
@@ -28,9 +25,19 @@ set ai
 set smartindent 
 set tabstop=4 
 set softtabstop=4 
-set shiftwidth=4
 set noet
+set wildmode=longest:full,full
+set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
 set belloff=all
+set formatoptions+=j " Delete comment character when joining commented lines
+set scrolloff=8
+set colorcolumn=80
+set signcolumn=yes
+set sidescrolloff=5
+set cmdheight=2
 noh
 
 "Only If ZSH:
@@ -71,7 +78,7 @@ map <silent><leader>q :bp<bar>bd #<CR>
 " map <leader>b <C-^>
 map <leader>b :bp<CR>
 
-map <silent><leader>n :noh<CR>
+map <silent><leader>n :bn<CR>
 " noremap <a-cr> I<CR><Esc> NOT Working atm.
 noremap <CR> A<CR><Esc>
 map <silent><leader>w :w<CR>
@@ -85,7 +92,6 @@ cmap <C-K> <Up>
 cmap <C-J> <Down>
 cmap <C-H> <Left>
 cmap <C-L> <Right>
-cmap <C-E> <Esc>
 
 " in insert mode, make ctrl h/j/k/l to act as arrows.
 imap <C-K> <Up>
@@ -93,15 +99,19 @@ imap <C-J> <Down>
 imap <C-H> <Left>
 imap <C-L> <Right>
 
-" Skip the <C-w> stuff for hjkl with alt. NOTE: Doesn't work with neovim
-nnoremap  <C-H> <C-W><C-H>
-nnoremap  <C-J> <C-W><C-J>
-nnoremap  <C-K> <C-W><C-K>
-nnoremap  <C-L> <C-W><C-L>
+" Skip the <C-w> stuff for hjkl with alt
+nnoremap  <m-h> <C-W><C-H>
+nnoremap  <m-j> <C-W><C-J>
+nnoremap  <m-k> <C-W><C-K>
+nnoremap  <m-l> <C-W><C-L>
 
 " Made jk into Esc (Might replace with <CapsLock>)
 inoremap jk <Esc>
 cmap jk <End><C-u><BS>
+
+" Easy quickList navigation
+nnoremap <S-Up> :cprev<CR>
+nnoremap <S-Down> :cnext<CR>
 
 " Easy tab navigation
 nnoremap <C-Left> :tabprevious<CR>
@@ -115,17 +125,9 @@ nmap j gj
 nnoremap <C-E> 3<C-E>
 nnoremap <C-Y> 3<C-Y>
 
-nnoremap <S-S> :%s/\v/c<Left><Left>
-
-nmap <C-S> :set spell<CR>
+nnoremap <C-S> :%s/\v/c<Left><Left>
 
 "======== Some Commands ========
-
-" When reading a buffer, unfold all
-au BufRead * normal zR
-
-" Set autoread on cursor resting 4 sec or so (Or buff switch)
-"au FocusGained,BufEnter,CursorHold,CursorHoldI * if !bufexists("[Command Line]") | checktime | endif
 
 command! SumYanked :echo "Sum: " eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')) <bar> let @" = string(eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')))
 command! WriteSudo :update !sudo tee %
@@ -133,11 +135,6 @@ command! CDC :lcd %:p:h
 command! Count :%s///n
 
 command! RemoveTrailingWhitespaces :%s/\s\+$//e
-
-" Open most recently used files on start
-if has('Mru')
-    autocmd VimEnter * Mru .
-endif
 
 " For some reason it needs to be at the end of the file
 set showcmd
