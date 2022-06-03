@@ -38,6 +38,12 @@ set colorcolumn=80
 set signcolumn=yes
 set sidescrolloff=5
 set cmdheight=2
+set noequalalways
+set diffopt+=iwhite " No whitespace in vimdiff
+" Make diffing better: https://vimways.org/2018/the-power-of-diff/
+set diffopt+=algorithm:patience
+set diffopt+=indent-heuristic
+set undofile
 noh
 
 set encoding=utf-8
@@ -71,9 +77,13 @@ map <silent><leader>q :bp<bar>bd #<CR>
 map <leader>b :bp<CR>
 map <leader>n :bn<CR>
 
+" Get parent folder, file name and path easily 
+cnoremap %H <C-R>=expand('%:h:p') . std#path#separator()<CR>
+cnoremap %T <C-R>=expand('%:t')<CR>
+cnoremap %P <C-R>=expand('%:p')<CR>
+
 map <silent><leader>n :bn<CR>
 " noremap <a-cr> I<CR><Esc> NOT Working atm.
-"
 " Only if set hlsearch
 " map <silent><leader>n :noh<CR>
 
@@ -104,6 +114,12 @@ nnoremap  <m-j> <C-W><C-J>
 nnoremap  <m-k> <C-W><C-K>
 nnoremap  <m-l> <C-W><C-L>
 
+" resize split with <C-Arrow>
+nnoremap  <C-Up> <C-W>5+
+nnoremap  <C-Down> <C-W>5-
+nnoremap  <C-Right> <C-W>5>
+nnoremap  <C-Left> <C-W>5<
+
 " Made jk into Esc (Might replace with <CapsLock>)
 inoremap jk <Esc>
 cmap jk <End><C-u><BS>
@@ -119,6 +135,10 @@ nnoremap <S-Right> :tabnext<CR>
 " Move Up and Down in wraped if I use it
 nmap k gk
 nmap j gj
+
+" Jump to start and end of line using the home row keys
+map H ^
+map L $
 
 " Make c-e c-y 3 times more effective
 nnoremap <C-E> 3<C-E>
@@ -139,7 +159,7 @@ nnoremap <silent> <C-6> <C-^>
 
 command! SumYanked :echo "Sum: " eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')) <bar> let @" = string(eval(join(split(@", '[^-0-9\.]\+\|\.\.\+'), '+')))
 command! WriteSudo :update !sudo tee %
-command! CDC :lcd %:p:h
+command! CDC :windo lcd %:p:h
 command! Count :%s///n
 
 command! RemoveTrailingWhitespaces :%s/\s\+$//e
@@ -149,14 +169,13 @@ set showcmd
 
 " Tweaks for browsing
 let g:netrw_banner=0        " disable annoying banner
-
 let g:netrw_browse_split=4  " open in prior window
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_winsize = 25
-vnoremap <leader>p "+p
+let g:netrw_winsize = 20
+let g:netrw_menu = 1
 
 " Opens help in vertical
 autocmd! FileType help :wincmd L | :vert resize 80

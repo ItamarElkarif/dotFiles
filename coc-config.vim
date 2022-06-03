@@ -29,7 +29,7 @@
     command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
     " Apply AutoFix to problem on the current line.
-    nnoremap <leader>fc <Plug>(coc-codeaction-cursor)
+    nnoremap <leader>fc <cmd>CocFix<cr>
 
 	" Get all diagnostics
 	nnoremap <silent><nowait> <leader>sd  :<C-u>CocList diagnostics<cr>
@@ -53,3 +53,13 @@
 
     " Add `:OR` command for organize imports of the current buffer.
     command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" ===============================Coc Git =====================================
+	" navigate chunks of current buffer
+	nmap ( <Plug>(coc-git-prevchunk)
+	nmap ) <Plug>(coc-git-nextchunk)
+	" create text object for git chunks
+	omap ic <Plug>(coc-git-chunk-inner)
+	xmap ic <Plug>(coc-git-chunk-inner)
+	omap ac <Plug>(coc-git-chunk-outer)
+	xmap ac <Plug>(coc-git-chunk-outer)

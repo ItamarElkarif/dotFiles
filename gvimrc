@@ -15,15 +15,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'gruvbox-community/gruvbox'
+	Plug 'luochen1990/rainbow'
 	Plug 'mhinz/vim-startify'
+	Plug 'tpope/vim-obsession'
 
 	" Should I replce with native lsp?
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'neoclide/coc-snippets'
 
-	Plug 'jremmen/vim-ripgrep'
-
-	Plug 'mhinz/vim-signify'
 	Plug 'tpope/vim-fugitive'
 
 	Plug 'tpope/vim-repeat'
@@ -32,6 +30,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'vim-scripts/ReplaceWithRegister' " gr(motion) is to replace
 	Plug 'justinmk/vim-sneak'
+	Plug 'jremmen/vim-ripgrep'
+	Plug 'sjl/gundo.vim'
 
 	" Custom textobj
 	Plug 'kana/vim-textobj-user'
@@ -49,12 +49,20 @@ call plug#begin('~/.vim/plugged')
 		Plug 'machakann/vim-highlightedyank'
 	endif
 
+	if has("unix")
+		Plug 'christoomey/vim-tmux-navigator'
+	endif
 call plug#end()
 
-colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='tomorrow'
 
 let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
+
+" Activate rainbow parentheses
+let g:rainbow_active = 1
 
 "======== Some lettings ========
 let g:mapleader = "\<Space>"
@@ -67,21 +75,6 @@ if !has('nvim')
 	let g:highlightedyank_highlight_duration = 200
 endif
 
-" Signify
-	" Jump via hunks!
-	nmap ) ]c
-	nmap ( [c
-
-	" Hunk textobj
-	omap ic <plug>(signify-motion-inner-pending)
-	xmap ic <plug>(signify-motion-inner-visual)
-	omap ac <plug>(signify-motion-outer-pending)
-	xmap ac <plug>(signify-motion-outer-visual)
-	
-	" Change sings
-	let g:signify_sign_change = '~'
-	let g:signify_sign_show_count = 0
-
 " ======== Keys Remmaping ========
 " Improving f\F with sneak
 if has_key(plugs, "vim-sneak")
@@ -89,6 +82,7 @@ if has_key(plugs, "vim-sneak")
     map F <Plug>Sneak_F
     map t <Plug>Sneak_t
     map T <Plug>Sneak_T
+    let g:sneak#label = 1
 endif
 
 nnoremap <c-c> "+y
@@ -100,10 +94,21 @@ nmap <leader>c gc
 vmap <leader>c gc
 
 " Use <leader>g... to git commands
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gw :Gwrite<CR>
-nmap <leader>gd :Gvdiff<CR>
+nmap <leader>gc :Gitcommit<CR>
+nmap <leader>gs :Git<CR>
+nmap <leader>gd :Gvdiffsplit<CR>
+
+nnoremap <F5> :GundoToggle<CR>
+
+" EZ Tmux navigation
+if has('unix')
+	let g:tmux_navigator_no_mappings = 1
+
+	nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+	nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+	nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+	nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+endif
 
 " ======== Some Commands ========
 execute 'command! EditSettings :e ' . g:dotFilesPath . 'gvimrc'

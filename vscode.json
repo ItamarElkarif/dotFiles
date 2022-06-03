@@ -245,3 +245,90 @@
     },
     "todo-tree.tree.showScanModeButton": false
 }
+
+
+{
+	"python.linting.pylintEnabled": true,
+	"python.linting.pycodestyleEnabled": false,
+	"python.linting.enabled": true,
+	"python.linting.banditEnabled": false,
+	"python.linting.flake8Enabled": false,
+	"python.linting.mypyEnabled": false,
+	"python.linting.prospectorEnabled": false,
+	"python.linting.pydocstyleEnabled": false,
+	"python.linting.pylamaEnabled": false,
+	"omnisharp.dotnetPath": "C:\\Program Files\\dotnet",
+	"editor.fontSize": 16,
+	"editor.fontLigatures": true,
+	"files.autoSave": "afterDelay",
+	"tabnine.experimentalAutoImports": true,
+	"workbench.tree.indent": 4,
+	"python.defaultInterpreterPath": "D:\\python3\\python.exe",
+	"go.useLanguageServer": true,
+	"vim.enableNeovim": true,
+	"extensions.ignoreRecommendations": false,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"vim.highlightedyank.enable": true,
+	"vim.highlightedyank.textColor": "#9c7305",
+	"vim.history": 100,
+	"vim.leader": " ",
+	"vim.neovimConfigPath": "C:\\Users\\Dell\\AppData\\Local\\nvim\\init.vim",
+	"vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
+	"vim.neovimUseConfigFile": true,
+	"vim.replaceWithRegister": true,
+	"vim.smartRelativeLine": true,
+	"vim.statusBarColorControl": true,
+	"vim.handleKeys": {
+		"<C-d>": true,
+	},
+	"workbench.colorCustomizations": {
+		"statusBar.background": "#005f5f",
+		"statusBar.noFolderBackground": "#005f5f",
+		"statusBar.debuggingBackground": "#005f5f"
+	},
+	"vim.timeout": 700,
+	"vim.vimrc.enable": true,
+	"vim.gdefault": true,
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"j",
+				"k"
+			],
+			"after": [
+				"<Esc>"
+			]
+		},
+	],
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"q"
+			],
+			"commands": [
+				":q"
+			]
+		},
+	],
+	"editor.mouseWheelZoom": true,
+	"editor.formatOnSave": true,
+	"java.format.comments.enabled": false,
+	"editor.minimap.enabled": false,
+	"go.toolsManagement.autoUpdate": true,
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter.notebook.ipynb"
+	},
+	"workbench.colorTheme": "Monokai",
+	"editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+	"vim.sneak": true,
+	"vim.sneakReplacesF": true,
+	"vim.sneakUseIgnorecaseAndSmartcase": true
+}

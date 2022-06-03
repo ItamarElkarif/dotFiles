@@ -23,8 +23,8 @@
 
 [core]
     excludesfile = ~/.gitignore
-    editor = vim --noplugin
-
+    editor = nvim# --noplugin
+    autocrlf = false
 [apply]
     whitespace = nowarn
 
