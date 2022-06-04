@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 	" Should I replce with native lsp?
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'sheerun/vim-polyglot'
 
 	Plug 'tpope/vim-fugitive'
 
@@ -20,7 +21,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-scripts/ReplaceWithRegister' " gr(motion) is to replace
 	Plug 'justinmk/vim-sneak'
 	Plug 'jremmen/vim-ripgrep'
-	Plug 'sjl/gundo.vim'
+	" Should learn undo tree
+	" Plug 'sjl/gundo.vim'
+
+	" TODO: Learn Debugging
+	" Plug 'puremourning/vimspector'
 
 	" Custom textobj
 	Plug 'kana/vim-textobj-user'

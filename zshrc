@@ -5,9 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="random" #"agnoster"
+ZSH_THEME="random" #"agnoster" "kennethreitz"
 
-ZSH_THEME_RANDOM_CANDIDATES=("sonicradish" "agnoster" "tjkirch" "geoffgarside" "intheloop" "fox" "kafeitu" "fwalch" "tjkirch_mod" "nicoulaj" "jaischeema" "sorin" "steeef" "dpoggi" "jnrowe" "miloshadzic" "nanotech" "candy-kingdom" "wezm" "kennethreitz" "dieter" "trapd00r" "tonotdo" "sporty_256")
+ZSH_THEME_RANDOM_CANDIDATES=("sonicradish" "agnoster" "tjkirch" "geoffgarside" "intheloop" "fox" "kafeitu" "fwalch" "tjkirch_mod" "nicoulaj" "jaischeema" "sorin" "steeef" "dpoggi" "jnrowe" "miloshadzic" "nanotech" "candy-kingdom" "wezm" "dieter" "trapd00r" "tonotdo" "sporty_256")
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
