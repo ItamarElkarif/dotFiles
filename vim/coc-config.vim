@@ -6,7 +6,7 @@
       inoremap <silent><expr> <c-@> coc#refresh()
     endif
 
-    let g:coc_snippet_next = '<tab>'
+    inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
 
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gi <Plug>(coc-implementation)

@@ -10,6 +10,8 @@ endif
 execute 'source ' . g:dotFilesPath . 'vim/without_plugins.vim'
 set guifont=FiraCode:h14
 
+" D:\Documents\DotFiles\vim\plugins.vim
+" /mnt/d/Documents/DotFiles/vim/plugins.vim
 execute 'source ' . g:dotFilesPath . 'vim/plugins.vim'
 
 let g:airline#extensions#tabline#enabled = 1
@@ -36,10 +38,20 @@ endif
 " ======== Keys Remmaping ========
 " Improving f\F with sneak
 if has_key(plugs, "vim-sneak")
-    map f <Plug>Sneak_f
-    map F <Plug>Sneak_F
-    map t <Plug>Sneak_t
-    map T <Plug>Sneak_T
+    nmap F <Plug>Sneak_F
+    nmap T <Plug>Sneak_T
+    nmap f <Plug>Sneak_f
+    nmap t <Plug>Sneak_t
+
+    omap F <Plug>Sneak_F
+    omap T <Plug>Sneak_T
+    omap f <Plug>Sneak_f
+    omap t <Plug>Sneak_t
+
+    xmap F <Plug>Sneak_F
+    xmap T <Plug>Sneak_T
+    xmap f <Plug>Sneak_f
+    xmap t <Plug>Sneak_t
     let g:sneak#label = 1
 endif
 

@@ -40,3 +40,6 @@ if has('nvim')
     tnoremap <S-Space> <Space>
     tnoremap <C-Space> <Space>
 endif
+
+set laststatus=3
+highlight WinSeparator guibg=None
