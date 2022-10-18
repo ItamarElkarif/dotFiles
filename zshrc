@@ -49,6 +49,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+alias vim='nvim'
 
 # seems to fix aliases not applying to vim terminal
 setopt aliases

@@ -26,8 +26,8 @@ install_tmux(){
 }
 
 install_vim(){
-	# Adding repository ppa:neovim-ppa/unstable
-	sudo add-apt-repository ppa:neovim-ppa/unstable
+	# Adding repository ppa:neovim-ppa/stable - replacing stable to unstable is an option
+	sudo add-apt-repository ppa:neovim-ppa/stable
 	sudo apt-get update
 	sudo apt-get install neovim -y
 

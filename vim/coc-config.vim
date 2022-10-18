@@ -6,7 +6,7 @@
       inoremap <silent><expr> <c-@> coc#refresh()
     endif
 
-    inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+    inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
 
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gi <Plug>(coc-implementation)
