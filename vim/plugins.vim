@@ -39,6 +39,10 @@ call plug#begin('~/.vim/plugged')
 		Plug 'nvim-telescope/telescope.nvim'
 		Plug 'nvim-telescope/telescope-media-files.nvim'
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+		" File Tree
+		Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+		Plug 'nvim-tree/nvim-tree.lua'
 	else
 		Plug 'machakann/vim-highlightedyank'
 	endif

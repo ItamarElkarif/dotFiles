@@ -18,7 +18,8 @@
     command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
     " Apply AutoFix to problem on the current line.
-    nnoremap <leader>fc <cmd>CocFix<cr>
+    nnoremap <leader>fc <Plug>(coc-fix-current)
+    nnoremap <leader>ac <Plug>(coc-codeaction)
 
 	" Get all diagnostics
 	nnoremap <silent><nowait> <leader>sd  :<C-u>CocList diagnostics<cr>
