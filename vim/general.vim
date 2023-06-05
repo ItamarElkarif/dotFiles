@@ -30,12 +30,13 @@ let g:mapleader = "\<Space>"
 " Remove C-H deleting stuff (Auto Pairs plugin)
 let g:AutoPairsMapCh = 0
 
+" Auto saves sessions with startify
+let g:startify_session_persistence = 1
 " ======== Keys Remmaping ========
 if !has('nvim')
 	let g:highlightedyank_highlight_duration = 200
 endif
 
-" ======== Keys Remmaping ========
 " Improving f\F with sneak
 if has_key(plugs, "vim-sneak")
     nmap F <Plug>Sneak_F

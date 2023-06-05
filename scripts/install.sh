@@ -1,7 +1,7 @@
 #!/bin/sh
 
 adding_config_folder(){
-	read -p "Choose a path for dotfiles (wsl format)" dotfiles_path
+	read -p "Choose a path for dotfiles (wsl format) " dotfiles_path
 	ln -s $dotfiles_path ~/.dotfiles
 }
 
@@ -12,9 +12,15 @@ install_ubuntu(){
 	sudo apt-get install git -y
 	sudo apt-get install zsh -y
 	chsh -s /bin/zsh
+	echo "[!] DELETING ~/.bashrc"
+	rm ~/.bashrc
+	ln -s ~/.dotfiles/bashrc ~/.bashrc
 }
 
 install_zsh(){
+	echo "[!] DELETING ~/.zshrc"
+	rm ~/.zshrc
+	ln -s ~/.dotfiles/zshrc ~/.zshrc
 	echo "[!] ENTER exit manually!"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
@@ -26,10 +32,9 @@ install_tmux(){
 }
 
 install_vim(){
-	# Adding repository ppa:neovim-ppa/stable - replacing stable to unstable is an option
-	sudo add-apt-repository ppa:neovim-ppa/stable
-	sudo apt-get update
-	sudo apt-get install neovim -y
+	wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb -O /tmp/nvim.linux64.deb
+	sudo dpkg -i --force-overwrite /tmp/nvim-linux64.deb
+	sudo apt-get --fix-broken install
 
 	# vim config
 	mkdir -p ~/.config/nvim/
@@ -49,8 +54,8 @@ EOF
 	nvim -c "PlugInstall"
 }
 
-
-install_ubuntu || exit 1
-install_zsh || exit 2
+adding_config_folder || exit 1
+install_ubuntu || exit 2
 install_tmux || exit 3
 install_vim || exit 4
+install_zsh || exit 5

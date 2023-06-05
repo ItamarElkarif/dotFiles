@@ -61,6 +61,9 @@ bindkey '^J' down-line-or-search
 bindkey '^L' forward-char
 bindkey '^H' backward-char
 
+#disable pause key 
+bindkey -s '^Z' ''
+
 # enable control-s and control-q
 stty start undef
 stty stop undef

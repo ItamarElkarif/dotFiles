@@ -96,11 +96,133 @@
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.ignorecase": true,
-    "vim.sneakUseIgnorecaseAndSmartcase": true,
     "vim.handleKeys": {
         "<C-k>": false,
+		"<C-d>": true,
         "<C-f>": false
     },
+    "csharp.suppressDotnetInstallWarning": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
+    "cSpell.userWords": [
+        "Itamar",
+        "MULT",
+        "argparse",
+        "cuze",
+        "itertools",
+        "pytest",
+        "respawn"
+    ],
+    "editor.multiCursorModifier": "alt",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "bracketPairColorizer.highlightActiveScope": true,
+    "bracketPairColorizer.showBracketsInRuler": true,
+    "terminal.integrated.fontSize": 16,
+    "vim.easymotionMarkerFontSize": "16",
+    "window.zoomLevel": 0,
+    "omnisharp.disableMSBuildDiagnosticWarning": true,
+    "todo-tree.highlights.enabled": true,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "vim.easymotion": true,
+    "vim.leader": " ",
+    "vim.easymotionMarkerBackgroundColor": "#5032a8",
+    "vim.easymotionMarkerHeight": 16,
+    "vim.easymotionMarkerWidthPerChar": 12,
+    "vim.surround": true,
+    "vim.timeout": 0,
+    "vim.gdefault": true,
+    "vim.vimrc.enable": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "[markdown]": {
+        "editor.defaultFormatter": "mervin.markdown-formatter"
+    },
+    "python.linting.flake8Args": [
+        "--config=./game/lib/setup.cfg"
+    ],
+    "eslint.options": {
+        "configFile": "./game/lib/visualizer/config/.eslintrc",
+        "ignoreFile": "./game/lib/visualizer/config/.eslintignore"
+    },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/game/lib/plugins/**/manifest.json"
+            ],
+            "url": "/tools/schemas/manifest.schema.json"
+        }
+    ],
+    "path-intellisense.mappings": {
+        "~": "${workspaceRoot}/game/lib",
+        "~plugins": "${workspaceRoot}/game/lib/plugins",
+        "~root": "${workspaceRoot}/game/lib/plugins/root/visualizer/js",
+        "~src": "${workspaceRoot}/game/lib/visualizer/src",
+        "~PluginManager": "${workspaceRoot}/game/lib/visualizer/src/bin/PluginManager.json"
+    },
+    "todo-tree.tree.showScanModeButton": false,
+	"python.linting.pylintEnabled": true,
+	"python.linting.pycodestyleEnabled": false,
+	"python.linting.enabled": true,
+	"python.linting.banditEnabled": false,
+	"python.linting.flake8Enabled": false,
+	"python.linting.mypyEnabled": false,
+	"python.linting.prospectorEnabled": false,
+	"python.linting.pydocstyleEnabled": false,
+	"python.linting.pylamaEnabled": false,
+	"omnisharp.dotnetPath": "C:\\Program Files\\dotnet",
+	"editor.fontSize": 16,
+	"tabnine.experimentalAutoImports": true,
+	"workbench.tree.indent": 4,
+	"python.defaultInterpreterPath": "D:\\python3\\python.exe",
+	"go.useLanguageServer": true,
+	"vim.enableNeovim": true,
+	"extensions.ignoreRecommendations": false,
+	"vim.highlightedyank.enable": true,
+	"vim.highlightedyank.textColor": "#9c7305",
+	"vim.history": 100,
+	"vim.neovimConfigPath": "C:\\Users\\Dell\\AppData\\Local\\nvim\\init.vim",
+	"vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
+	"vim.neovimUseConfigFile": true,
+	"vim.replaceWithRegister": true,
+	"vim.smartRelativeLine": true,
+	"vim.statusBarColorControl": true,
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"j",
+				"k"
+			],
+			"after": [
+				"<Esc>"
+			]
+		}
+	],
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [
+				"<leader>",
+				"q"
+			],
+			"commands": [
+				":q"
+			]
+		}
+	],
+	"editor.mouseWheelZoom": true,
+	"editor.formatOnSave": true,
+	"java.format.comments.enabled": false,
+	"editor.minimap.enabled": false,
+	"go.toolsManagement.autoUpdate": true,
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter.notebook.ipynb"
+	},
+	"workbench.colorTheme": "Monokai",
+	"vim.sneakReplacesF": true,
+	"vim.sneakUseIgnorecaseAndSmartcase": true
+}
+
     // "vim.normalModeKeyBindingsNonRecursive": [
     //     {
     //         "before": [
@@ -176,159 +298,3 @@
     //         ]
     //     }
     // ],
-    "csharp.suppressDotnetInstallWarning": true,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 120,
-    "cSpell.userWords": [
-        "Itamar",
-        "MULT",
-        "argparse",
-        "cuze",
-        "itertools",
-        "pytest",
-        "respawn"
-    ],
-    "editor.multiCursorModifier": "alt",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "bracketPairColorizer.highlightActiveScope": true,
-    "bracketPairColorizer.showBracketsInRuler": true,
-    "terminal.integrated.fontSize": 16,
-    "editor.fontSize": 15,
-    "vim.easymotionMarkerFontSize": "16",
-    "workbench.colorTheme": "Cobalt2",
-    "window.zoomLevel": 0,
-    "omnisharp.disableMSBuildDiagnosticWarning": true,
-    "todo-tree.highlights.enabled": true,
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "vim.easymotion": true,
-    "vim.leader": " ",
-    "vim.easymotionMarkerBackgroundColor": "#5032a8",
-    "vim.easymotionMarkerHeight": 16,
-    "vim.easymotionMarkerWidthPerChar": 12,
-    "vim.statusBarColorControl": true,
-    "vim.replaceWithRegister": true,
-    "vim.surround": true,
-    "vim.timeout": 0,
-    "vim.gdefault": true,
-    "vim.highlightedyank.enable": true,
-    "vim.vimrc.enable": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "[markdown]": {
-        "editor.defaultFormatter": "mervin.markdown-formatter"
-    },
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--config=./game/lib/setup.cfg"
-    ],
-    "eslint.options": {
-        "configFile": "./game/lib/visualizer/config/.eslintrc",
-        "ignoreFile": "./game/lib/visualizer/config/.eslintignore"
-    },
-    "json.schemas": [
-        {
-            "fileMatch": [
-                "/game/lib/plugins/**/manifest.json"
-            ],
-            "url": "/tools/schemas/manifest.schema.json"
-        }
-    ],
-    "path-intellisense.mappings": {
-        "~": "${workspaceRoot}/game/lib",
-        "~plugins": "${workspaceRoot}/game/lib/plugins",
-        "~root": "${workspaceRoot}/game/lib/plugins/root/visualizer/js",
-        "~src": "${workspaceRoot}/game/lib/visualizer/src",
-        "~PluginManager": "${workspaceRoot}/game/lib/visualizer/src/bin/PluginManager.json"
-    },
-    "todo-tree.tree.showScanModeButton": false
-}
-
-
-{
-	"python.linting.pylintEnabled": true,
-	"python.linting.pycodestyleEnabled": false,
-	"python.linting.enabled": true,
-	"python.linting.banditEnabled": false,
-	"python.linting.flake8Enabled": false,
-	"python.linting.mypyEnabled": false,
-	"python.linting.prospectorEnabled": false,
-	"python.linting.pydocstyleEnabled": false,
-	"python.linting.pylamaEnabled": false,
-	"omnisharp.dotnetPath": "C:\\Program Files\\dotnet",
-	"editor.fontSize": 16,
-	"editor.fontLigatures": true,
-	"files.autoSave": "afterDelay",
-	"tabnine.experimentalAutoImports": true,
-	"workbench.tree.indent": 4,
-	"python.defaultInterpreterPath": "D:\\python3\\python.exe",
-	"go.useLanguageServer": true,
-	"vim.enableNeovim": true,
-	"extensions.ignoreRecommendations": false,
-	"editor.suggestSelection": "first",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"files.exclude": {
-		"**/.classpath": true,
-		"**/.project": true,
-		"**/.settings": true,
-		"**/.factorypath": true
-	},
-	"vim.highlightedyank.enable": true,
-	"vim.highlightedyank.textColor": "#9c7305",
-	"vim.history": 100,
-	"vim.leader": " ",
-	"vim.neovimConfigPath": "C:\\Users\\Dell\\AppData\\Local\\nvim\\init.vim",
-	"vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
-	"vim.neovimUseConfigFile": true,
-	"vim.replaceWithRegister": true,
-	"vim.smartRelativeLine": true,
-	"vim.statusBarColorControl": true,
-	"vim.handleKeys": {
-		"<C-d>": true,
-	},
-	"workbench.colorCustomizations": {
-		"statusBar.background": "#005f5f",
-		"statusBar.noFolderBackground": "#005f5f",
-		"statusBar.debuggingBackground": "#005f5f"
-	},
-	"vim.timeout": 700,
-	"vim.vimrc.enable": true,
-	"vim.gdefault": true,
-	"vim.insertModeKeyBindings": [
-		{
-			"before": [
-				"j",
-				"k"
-			],
-			"after": [
-				"<Esc>"
-			]
-		},
-	],
-	"vim.normalModeKeyBindings": [
-		{
-			"before": [
-				"<leader>",
-				"q"
-			],
-			"commands": [
-				":q"
-			]
-		},
-	],
-	"editor.mouseWheelZoom": true,
-	"editor.formatOnSave": true,
-	"java.format.comments.enabled": false,
-	"editor.minimap.enabled": false,
-	"go.toolsManagement.autoUpdate": true,
-	"workbench.editorAssociations": {
-		"*.ipynb": "jupyter.notebook.ipynb"
-	},
-	"workbench.colorTheme": "Monokai",
-	"editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
-	"vim.sneak": true,
-	"vim.sneakReplacesF": true,
-	"vim.sneakUseIgnorecaseAndSmartcase": true
-}
