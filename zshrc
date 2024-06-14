@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-source ~/.bashrc
+# source ~/.bashrc
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="random" #"agnoster" "kennethreitz"
+ZSH_THEME="random"
 
 ZSH_THEME_RANDOM_CANDIDATES=("sonicradish" "agnoster" "tjkirch" "geoffgarside" "intheloop" "fox" "kafeitu" "fwalch" "tjkirch_mod" "nicoulaj" "jaischeema" "sorin" "steeef" "dpoggi" "jnrowe" "miloshadzic" "nanotech" "candy-kingdom" "wezm" "dieter" "trapd00r" "tonotdo" "sporty_256")
 
@@ -39,7 +39,7 @@ compinit
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git extract web-search battery) #thefuck  vi-mode)
+plugins=(git extract web-search battery chucknorris)
 
 source $ZSH/oh-my-zsh.sh
 

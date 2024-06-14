@@ -1,7 +1,7 @@
 #!/bin/sh
 
 adding_config_folder(){
-	read -p "Choose a path for dotfiles (wsl format) " dotfiles_path
+	read -p "Choose a path for dotfiles source to copy into ~/.dotfiles (wsl format) " dotfiles_path
 	ln -s $dotfiles_path ~/.dotfiles
 }
 
@@ -32,16 +32,14 @@ install_tmux(){
 }
 
 install_vim(){
-	wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb -O /tmp/nvim.linux64.deb
-	sudo dpkg -i --force-overwrite /tmp/nvim-linux64.deb
-	sudo apt-get --fix-broken install
+	sudo apt install neovim
 
 	# vim config
 	mkdir -p ~/.config/nvim/
 	cat >> ~/.config/nvim/init.vim<<EOF
 source ~/.dotfiles/vim/without_plugins.vim
-source ~/.dotfiles/vim/general.vim
 source ~/.dotfiles/vim/plugins.vim
+source ~/.dotfiles/vim/general.vim
 source ~/.dotfiles/vim/init.vim
 
 command! EditSettings :e ~/.config/nvim/init.vim

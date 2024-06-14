@@ -1,18 +1,4 @@
-if has('unix')
-	let g:dotFilesPath = "/mnt/d/Documents/dotFiles/"
-else
-	let g:dotFilesPath = "D:/Documents/dotFiles/"
-endif
-
-
-" D:\Documents\DotFiles\vim\without_plugins.vim
-" /mnt/d/Documents/DotFiles/vim/without_plugins.vim
-execute 'source ' . g:dotFilesPath . 'vim/without_plugins.vim'
 set guifont=FiraCode:h14
-
-" D:\Documents\DotFiles\vim\plugins.vim
-" /mnt/d/Documents/DotFiles/vim/plugins.vim
-execute 'source ' . g:dotFilesPath . 'vim/plugins.vim'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -82,5 +68,4 @@ if has('unix')
 endif
 
 " ======== Some Commands ========
-execute 'command! EditSettings :e ' . g:dotFilesPath . 'vim/general.vim'
-execute 'source ' . g:dotFilesPath . 'vim/coc-config.vim'
+execute 'command! EditSettings :e ' . expand('%:p')
