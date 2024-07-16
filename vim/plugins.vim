@@ -4,6 +4,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'gruvbox-community/gruvbox'
+	Plug 'raphamorim/lucario'
+	Plug 'sjl/badwolf'
+	Plug 'shaunsingh/nord.nvim'
+	Plug 'mhinz/vim-janah'
+	Plug 'qmack2/Brogrammer-vim'
+	Plug 'tomasr/molokai'
 	Plug 'luochen1990/rainbow'
 	Plug 'mhinz/vim-startify'
 	Plug 'tpope/vim-obsession'

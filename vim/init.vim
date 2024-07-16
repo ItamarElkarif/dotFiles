@@ -44,28 +44,21 @@ endif
 set laststatus=3
 highlight WinSeparator guibg=None
 
-" Assuming you have installed nvim-tree
-lua << EOF
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+let g:mycolores = ['default', 'ron']
 
--- OR setup with some options
-require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    adaptive_size = true,
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
-EOF
+function! ChooseRandomColorScheme()
+    let l:chosenColor = g:mycolors[localtime() % len(g:mycolors)]
+    execute 'colorscheme ' . chosenColor
+    " if has ('nvim') && (g:colors_name =='jhana' || g:colors_name == 'lucario')
+        set termguicolors
+    " else
+    "     set notermguicolors
+    " endif
+endfunction
+
+:command! RandomColorScheme call ChooseRandomColorScheme()
+
+
+
+let g:mycolors = ['lucario', 'gruvbox', 'badwolf', 'brogrammer', 'molokai', 'janah', 'nord', 'habamax']
+call ChooseRandomColorScheme()
