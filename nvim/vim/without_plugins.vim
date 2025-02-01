@@ -53,7 +53,7 @@ hi Search guibg=LightBlue
 set bg=dark
 
 "====Showing trail spaces====
-set listchars=nbsp:^,trail:.,tab:>~
+set listchars=nbsp:^,trail:.,tab:▸\ 
 set list
 
 "======== Some lettings ========

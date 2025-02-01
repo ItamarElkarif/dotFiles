@@ -1,9 +1,9 @@
 # git aliases
 FUNCTION git_status_short {git status -sb $args}
-Set-Alias gst git_status_short
+Set-Alias gst git_status_short -force -Option AllScope
 
 FUNCTION git_push {git push $args}
-New-Alias gp git_push -force -Option AllScope
+Set-Alias gp git_push -force -Option AllScope
 
 FUNCTION git_pull {git pull $args}
 Set-Alias gl git_pull -force -Option AllScope
